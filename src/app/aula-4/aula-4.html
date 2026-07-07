@@ -1,0 +1,14 @@
+<p>aula-4 works!</p>
+
+<!--
+Isso se chama interpolação (Interpolation)
+As chaves duplas {{ }} permitem exibir valores do componente no template
+-->
+<h1>{{titulo}}</h1>
+
+<div>
+    <button (click)="alternar()">Alternar botão</button>
+    <button (click)="onClick()">Console log</button>
+</div>
+
+<button [disabled] = "isDisable">Botão</button>

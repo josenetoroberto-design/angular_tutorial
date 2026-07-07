@@ -1,0 +1,23 @@
+<div class="products-container">
+
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Search Products</mat-label>
+    <input matInput [(ngModel)]="searchTerm" placeholder="e.g headphones">
+  </mat-form-field>
+
+  <div class="products-grid">
+
+    @for (item of filteredProducts(); track item.id) {
+
+      <!-- Property Binding: o Input product recebe o item atual -->
+      <app-product-card [product]="item" (addToCart)="onAddToCart($event)"></app-product-card>
+
+    } @empty{
+        <div class="empty-state">
+            <mat-icon>inventory-2</mat-icon>
+            <h3>No products available</h3>
+            <p>check back later for new arrivals</p>
+        </div>
+    }
+  </div>
+</div>
